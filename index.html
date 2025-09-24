@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FULXERPRO INVESTORS | The Architecture of Modern Wealth</title>
+  
+  <link rel="stylesheet" href="index.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "marked": "https://esm.sh/marked@^15.0.8",
+        "@google/genai": "https://esm.sh/@google/genai@0.14.0"
+      }
+    }
+  </script>
+  <script type="module" src="index.tsx"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="logo">FULXERPRO</div>
+      <nav class="nav">
+        <a href="#" class="nav-link active" data-view="dashboard-view" id="nav-link-dashboard">Dashboard</a>
+        <a href="#" class="nav-link">Strategies</a>
+        <a href="#" class="nav-link">Research</a>
+        <a href="#" class="nav-link" data-view="ai-studio-view" id="nav-link-studio">AI Studio</a>
+        <a href="#" class="nav-link" data-view="guide-view">Platform Guide</a>
+        <a href="#" class="nav-link" data-view="admin-view" id="nav-link-admin">Admin</a>
+      </nav>
+      <button class="btn btn-secondary" id="cta-login-btn">Client Login</button>
+    </div>
+  </header>
+
+  <main>
+    <div id="dashboard-view" class="view-section">
+      <section class="hero">
+        <div class="container">
+          <h1>The Architecture of Modern Wealth.</h1>
+          <p>Harnessing institutional-grade intelligence and proprietary technology to build your enduring financial legacy.</p>
+          <button class="btn btn-primary btn-lg" id="cta-explore-btn">Explore Your Portfolio</button>
+        </div>
+      </section>
+
+      <section class="dashboard">
+        <div class="container">
+          <h2>Portfolio Intelligence Dashboard</h2>
+          <div class="dashboard-grid">
+            <div class="card-widget">
+              <h3>Portfolio Overview</h3>
+              <p class="metric-value">$12,458,721.55</p>
+              <p class="metric-change positive">+ $82,194.12 (+0.66%) Today</p>
+              <div class="chart-placeholder">
+                <svg width="100%" height="150" viewBox="0 0 400 150" preserveAspectRatio="none">
+                  <path d="M 0 120 C 40 100, 80 60, 120 80 S 200 130, 240 100 S 320 20, 360 50 S 400 80, 400 80" stroke="var(--primary-500)" fill="none" stroke-width="2"/>
+                </svg>
+              </div>
+            </div>
+            <div class="card-widget">
+              <h3>Asset Allocation</h3>
+               <div class="allocation-grid">
+                  <div class="allocation-item" style="--color: #007aff;"><span>US Equities</span><span>45%</span></div>
+                  <div class="allocation-item" style="--color: #34c759;"><span>Int'l Equities</span><span>20%</span></div>
+                  <div class="allocation-item" style="--color: #ff9500;"><span>Fixed Income</span><span>15%</span></div>
+                  <div class="allocation-item" style="--color: #ff3b30;"><span>Alternatives</span><span>10%</span></div>
+                  <div class="allocation-item" style="--color: #af52de;"><span>Private Equity</span><span>5%</span></div>
+                  <div class="allocation-item" style="--color: #5856d6;"><span>Cash</span><span>5%</span></div>
+              </div>
+            </div>
+            <div class="card-widget card-full-width" id="ai-insights-container">
+              <h3>AI-Powered Strategic Opportunities</h3>
+              <div id="ai-insights-content">
+                <!-- AI content will be injected here -->
+              </div>
+            </div>
+            <div class="card-widget card-full-width">
+              <h3>Our Investment Tiers</h3>
+              <div class="plans-grid">
+                <div class="plan-card">
+                  <h4>Apex Ascent</h4>
+                  <p class="plan-description">For the ambitious investor beginning their journey to significant wealth.</p>
+                  <ul class="plan-features">
+                    <li>Strategic Market Access</li>
+                    <li>AI-Curated Portfolio</li>
+                    <li>Core Growth Assets</li>
+                  </ul>
+                  <button class="btn btn-secondary">Select Plan</button>
+                </div>
+                <div class="plan-card featured">
+                  <h4>Nexus Growth</h4>
+                  <p class="plan-description">For the established investor seeking accelerated, diversified returns.</p>
+                  <ul class="plan-features">
+                    <li>Diversified Alpha Strategies</li>
+                    <li>Emerging Sector Exposure</li>
+                    <li>Priority Research Access</li>
+                  </ul>
+                  <button class="btn btn-primary">Select Plan</button>
+                </div>
+                <div class="plan-card">
+                  <h4>Celestial Mandate</h4>
+                  <p class="plan-description">For the visionary investor focused on building a generational legacy.</p>
+                  <ul class="plan-features">
+                    <li>Generational Wealth Architecture</li>
+                    <li>Exclusive Off-Market Deals</li>
+                    <li>Direct Co-Investment Rights</li>
+                  </ul>
+                  <button class="btn btn-secondary">Select Plan</button>
+                </div>
+              </div>
+            </div>
+            <div class="card-widget wallet-widget">
+                <h3>My Wallet</h3>
+                <div class="wallet-address-container">
+                    <span id="wallet-address">0x1A3b5C7d9E1f2G3H4i5j6K7L8m9N0o1P2q3R4s5T</span>
+                    <button id="copy-wallet-btn" class="btn btn-secondary" aria-label="Copy wallet address">Copy</button>
+                </div>
+                <div class="wallet-details">
+                    <div class="wallet-qr">
+                         <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=0x1A3b5C7d9E1f2G3H4i5j6K7L8m9N0o1P2q3R4s5T" alt="Wallet QR Code">
+                    </div>
+                    <div class="transaction-history">
+                        <h4>Transaction History</h4>
+                        <ul>
+                            <li><span class="positive">+0.5 ETH</span><small>2 hours ago</small></li>
+                            <li><span class="positive">+1.2 ETH</span><small>1 day ago</small></li>
+                            <li><span class="negative">-0.1 ETH</span><small>3 days ago</small></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card-widget">
+              <h3>Social Trading Insights</h3>
+              <div class="search-container">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                <input type="search" id="social-search-input" placeholder="Search traders...">
+              </div>
+              <ul class="trader-list">
+                <li data-trader-info='{"name": "Elena Rodriguez", "rank": "Top 1%", "ytd": "+24.5%", "trades": "BUY 150 NVDA, SELL 500 PFE, BUY 2000 PLTR"}'>
+                  <div class="trader-avatar"></div>
+                  <div class="trader-info">
+                    <span class="trader-name">Elena Rodriguez</span>
+                    <span class="trader-rank">Top 1% | +24.5% YTD</span>
+                  </div>
+                  <button class="follow-button">+</button>
+                </li>
+                <li data-trader-info='{"name": "Ben Carter", "rank": "Top 5%", "ytd": "+18.2%", "trades": "BUY 1000 MSFT, BUY 800 GOOG, SELL 200 TSLA"}'>
+                  <div class="trader-avatar"></div>
+                  <div class="trader-info">
+                    <span class="trader-name">Ben Carter</span>
+                    <span class="trader-rank">Top 5% | +18.2% YTD</span>
+                  </div>
+                  <button class="follow-button">+</button>
+                </li>
+                 <li data-trader-info='{"name": "Aisha Khan", "rank": "Rising Star", "ytd": "+31.0%", "trades": "BUY 5000 AMD, BUY 10000 INTC, SELL 3000 QCOM"}'>
+                  <div class="trader-avatar"></div>
+                  <div class="trader-info">
+                    <span class="trader-name">Aisha Khan</span>
+                    <span class="trader-rank">Rising Star | +31.0% YTD</span>
+                  </div>
+                  <button class="follow-button">+</button>
+                </li>
+              </ul>
+            </div>
+            <div class="card-widget">
+              <h3>Recent Activity</h3>
+              <ul class="activity-list">
+                <li><span>BUY</span><span>100 TSLA @ $182.50</span><span class="positive">-$18,250.00</span></li>
+                <li><span>DIVIDEND</span><span>MSFT</span><span class="positive">+$560.25</span></li>
+                <li><span>SELL</span><span>50 GOOG @ $178.10</span><span class="positive">+$8,905.00</span></li>
+                <li><span>DEPOSIT</span><span>Wire Transfer</span><span class="positive">+$50,000.00</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="awards-section">
+        <div class="container">
+          <h2>AI-Driven Excellence: Our Commitment to a Trusted & Reliable Platform</h2>
+          <p class="section-subtitle">Gaining client trust is what truly matters. Our platform’s architecture is consistently recognized for its innovation, security, and reliability by leading global authorities.</p>
+          <div class="awards-grid">
+            <div class="award-card">
+              <div class="award-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg>
+              </div>
+              <h4>The Turing Award for Financial AI Innovation</h4>
+              <p>Awarded for our proprietary AI's unparalleled predictive accuracy and its contribution to democratizing institutional-grade strategic insights.</p>
+            </div>
+            <div class="award-card">
+              <div class="award-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              </div>
+              <h4>Global WealthTech's 'Most Reliable Platform' Shield</h4>
+              <p>Recognized for five consecutive years for achieving 99.999% uptime and flawless execution of over 10 million secure transactions.</p>
+            </div>
+            <div class="award-card">
+              <div class="award-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 10.5c-2.2 2.2-2.2 5.8 0 8s5.8 2.2 8 0"/><path d="M19.5 13.5c2.2-2.2 2.2-5.8 0-8s-5.8-2.2-8 0"/><path d="M16 8l-8 8"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m6.3 6.3-.9-.9"/><path d="m18.6 18.6-.9-.9"/><path d="M22 12h-2"/><path d="M4 12H2"/><path d="m17.7 6.3.9-.9"/><path d="m5.4 18.6.9-.9"/></svg>
+              </div>
+              <h4>The Sentinel Prize for Secure Asset Management</h4>
+              <p>Awarded for our multi-layered, blockchain-verified security protocol that sets a new industry standard for protecting client assets against emerging threats.</p>
+            </div>
+            <div class="award-card">
+              <div class="award-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 16 4-4-4-4-4 4 4 4z"/><path d="M20 7.4V12c0 2.2-1.8 4-4 4H8c-2.2 0-4-1.8-4-4V7.4C4 6.1 5.1 5 6.4 5H12"/><path d="M12 16v4"/><path d="M17.6 5.4 12 10l-5.6-4.6"/><path d="m16 5 2 2-5 5-5-5 2-2"/></svg>
+              </div>
+              <h4>FULXERPRO AI Research Fellowship</h4>
+              <p>Partnering with leading academic institutions to pioneer the future of ethical, transparent, and explainable financial artificial intelligence.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="testimonials">
+        <div class="container">
+          <h2>Trusted by <span id="global-user-count">0</span>+ investors globally</h2>
+          <p class="section-subtitle">Our platform has been the reliable cornerstone of wealth creation for years, ensuring transparent and secure fund activity every step of the way.</p>
+          <div class="testimonials-grid">
+            <div class="testimonial-card">
+              <p class="testimonial-quote">"As an early adopter, I've seen FULXERPRO evolve. Their reliability is unmatched. My fund activities, from large deposits to complex trades, are always seamless and transparent. This isn't just an app; it's a trusted financial partner."</p>
+              <div class="testimonial-author">
+                <span class="author-name">Chen Wei</span>
+                <span class="author-title">Early Investor, 5 Years</span>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <p class="testimonial-quote">"The security and trustworthiness of the platform are why I've stayed for years. Knowing my capital is secure while I access next-gen opportunities is invaluable. The global user base speaks for itself—this is the gold standard."</p>
+              <div class="testimonial-author">
+                <span class="author-name">Amina Okoro</span>
+                <span class="author-title">Venture Capitalist</span>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <p class="testimonial-quote">"For the past few years, FULXERPRO has been my go-to. The execution of fund activities is flawless, and the platform's performance has been consistently reliable. It's a trustworthy pillar of my investment strategy."</p>
+              <div class="testimonial-author">
+                <span class="author-name">David Steinberg</span>
+                <span class="author-title">Fintech Entrepreneur</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <section class="ai-studio view-section" id="ai-studio-view" style="display: none;">
+      <div class="container">
+        <div class="ai-studio-grid">
+          <aside class="ai-studio-sidebar">
+            <div class="ai-studio-card">
+              <div class="ai-studio-card-header">
+                <h3>AI Visualization Studio</h3>
+                 <div class="ai-studio-mode-switcher">
+                    <button class="mode-btn active" data-mode="image">Image</button>
+                    <button class="mode-btn" data-mode="video">Video</button>
+                  </div>
+              </div>
+              <div class="ai-studio-card-body">
+                <form id="ai-studio-form">
+                  <div class="form-group">
+                    <label for="ai-studio-prompt">Describe the visualization</label>
+                    <textarea id="ai-studio-prompt" rows="5" placeholder="e.g., A bar chart of GOOG vs AAPL performance over the last year."></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label for="ai-studio-aspect">Aspect Ratio</label>
+                    <select id="ai-studio-aspect">
+                      <option value="16:9" selected>16:9 (Widescreen)</option>
+                      <option value="1:1">1:1 (Square)</option>
+                      <option value="9:16">9:16 (Vertical)</option>
+                    </select>
+                  </div>
+                  <button type="submit" class="btn btn-primary" id="ai-studio-generate-btn">
+                    Generate Image
+                  </button>
+                </form>
+                <form id="ai-studio-video-form" class="hidden">
+                    <div class="form-group">
+                        <label for="ai-studio-video-prompt">Describe the video</label>
+                        <textarea id="ai-studio-video-prompt" rows="5" placeholder="e.g., A soaring drone shot over a futuristic city with data streams."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="ai-studio-video-image">Optional: Add starting image</label>
+                        <input type="file" id="ai-studio-video-image" accept="image/*">
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="ai-studio-generate-video-btn">
+                        Generate Video
+                    </button>
+                </form>
+              </div>
+            </div>
+          </aside>
+          <main class="ai-studio-main">
+            <div class="ai-studio-canvas" id="ai-studio-canvas">
+              <div class="placeholder" id="ai-studio-placeholder">
+                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                <p>Your generated visualizations will appear here.</p>
+              </div>
+              <div class="loading-overlay" id="ai-studio-loading" style="display: none;">
+                <div class="spinner"></div>
+                <p id="ai-studio-loading-message">Generating your visualization...</p>
+              </div>
+              <div id="ai-studio-output"></div>
+            </div>
+            <div class="ai-studio-edit-controls" id="ai-studio-edit-controls" style="display: none;">
+                <form id="ai-studio-edit-form">
+                    <div class="form-group">
+                        <label for="ai-studio-edit-prompt">Describe your edits</label>
+                        <textarea id="ai-studio-edit-prompt" rows="3" placeholder="e.g., Make the background blue, add a sun in the corner."></textarea>
+                    </div>
+                    <div class="edit-buttons">
+                        <button type="submit" class="btn btn-primary" id="ai-studio-apply-btn">Apply Edits</button>
+                        <button type="button" class="btn btn-secondary" id="ai-studio-reset-btn">Start Over</button>
+                    </div>
+                </form>
+            </div>
+          </main>
+        </div>
+      </div>
+    </section>
+
+    <section id="guide-view" class="view-section guide-view" style="display: none;">
+      <div class="container">
+        <h2>Platform Features Guide</h2>
+        <div id="guide-content">
+          <!-- AI Guide content will be injected here -->
+        </div>
+      </div>
+    </section>
+
+    <section id="admin-view" class="admin-panel view-section" style="display: none;">
+      <div class="container">
+        <h2>Admin Control Panel</h2>
+        <div id="admin-content">
+          <!-- Error log will be rendered here by renderAdminView() -->
+        </div>
+      </div>
+    </section>
+    
+    <!-- Trader Analysis MODAL -->
+    <div class="modal-overlay" id="trader-analysis-modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close" id="trader-analysis-modal-close-btn" aria-label="Close modal">&times;</button>
+            <h2 id="trader-analysis-modal-title">AI Trader Analysis</h2>
+            <div id="trader-analysis-modal-content">
+                <!-- AI content will be injected here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- AUTH MODAL -->
+    <div class="modal-overlay" id="auth-modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close-btn" aria-label="Close modal">&times;</button>
+            
+            <!-- Login Form -->
+            <div id="login-form-container">
+                <h2>Client Login</h2>
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="login-email">Email Address</label>
+                        <input type="email" id="login-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Password</label>
+                        <input type="password" id="login-password" required>
+                    </div>
+                    <div class="form-extra-links">
+                        <a href="#" id="show-forgot-password-link">Forgot Password?</a>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Sign In</button>
+                </form>
+                <div class="form-toggle">
+                    <span>Don't have an account? <a href="#" id="show-signup-link">Sign Up</a></span>
+                </div>
+            </div>
+
+            <!-- Signup Form -->
+            <div id="signup-form-container" class="hidden">
+                 <h2>Create Your Account</h2>
+                <form id="signup-form">
+                    <div class="form-group">
+                        <label for="signup-name">Full Name</label>
+                        <input type="text" id="signup-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-email">Email Address</label>
+                        <input type="email" id="signup-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-password">Password</label>
+                        <input type="password" id="signup-password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Create Account</button>
+                </form>
+                 <div class="form-toggle">
+                    <span>Already have an account? <a href="#" id="show-login-link">Sign In</a></span>
+                </div>
+            </div>
+
+            <!-- Forgot Password -->
+            <div id="forgot-password-container" class="hidden">
+                <h2>Reset Password</h2>
+                <p class="form-description">Enter your email and we'll send you a link to reset your password.</p>
+                <form id="forgot-password-form">
+                    <div class="form-group">
+                        <label for="forgot-email">Email Address</label>
+                        <input type="email" id="forgot-email" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Reset Link</button>
+                </form>
+                 <div class="form-toggle">
+                    <a href="#" id="back-to-login-link">Back to Login</a>
+                </div>
+            </div>
+
+            <!-- Google Authenticator -->
+            <div id="google-auth-container" class="hidden">
+                <h2>Two-Factor Authentication</h2>
+                <form id="google-auth-form">
+                    <p class="form-description">Enter the 6-digit code from your authenticator app.</p>
+                    <div class="form-group">
+                        <label for="auth-code">Verification Code</label>
+                        <input type="text" id="auth-code" required maxlength="6" pattern="\d{6}">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Verify Code</button>
+                </form>
+                <div class="auth-setup-info">
+                    <p>First time setup? Scan this QR code.</p>
+                    <div id="auth-qr-code">
+                        <img id="auth-qr-code-img" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=otpauth://totp/FULXERPRO:user@fulxerpro.com?secret=JBSWY3DPEHPK3PXP&issuer=FULXERPRO" alt="Authenticator QR Code">
+                    </div>
+                    <p>Or manually enter this key:</p>
+                     <div class="auth-setup-key-container">
+                        <span id="auth-setup-key">JBSWY3DPEHPK3PXP</span>
+                        <button id="copy-auth-key-btn" class="btn btn-secondary">Copy</button>
+                    </div>
+                </div>
+                <div class="form-toggle">
+                    <a href="#" id="back-to-login-from-auth">Back to Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- FULXERPRO Ad Interstitial -->
+    <div class="ad-overlay" id="ad-overlay">
+        <div class="ad-content">
+            <div class="logo">FULXERPRO</div>
+            <div class="ad-taglines" id="ad-taglines">
+                <p>The Architecture of Modern Wealth.</p>
+                <p>Institutional-Grade Intelligence.</p>
+                <p>Building Your Enduring Legacy.</p>
+            </div>
+            <div class="ad-footer">
+                <span id="ad-countdown">Continuing in 10s</span>
+                <button class="btn btn-secondary" id="ad-skip-btn">Skip</button>
+            </div>
+        </div>
+    </div>
+    
+      <!-- AI Copilot -->
+    <div class="copilot-fab" id="copilot-fab" aria-label="Open AI Co-pilot">
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.9 4.2-4.2 1.9 4.2 1.9L12 15l1.9-4.2 4.2-1.9-4.2-1.9L12 3z"/><path d="M5 12.5s2.5-1.5 5-1.5 5 1.5 5 1.5"/><path d="M5 19.5s2.5-1.5 5-1.5 5 1.5 5 1.5"/></svg>
+    </div>
+    <div class="copilot-window" id="copilot-window">
+        <div class="copilot-header">
+            <h3>FULXERPRO AI Co-pilot</h3>
+            <button class="copilot-close" id="copilot-close-btn" aria-label="Close AI Co-pilot">&times;</button>
+        </div>
+        <div class="copilot-messages" id="copilot-messages">
+             <div class="message ai">
+                <div class="message-content">
+                  Hello! How can I help you navigate the FULXERPRO platform today?
+                </div>
+            </div>
+        </div>
+        <div class="copilot-input-area">
+            <form id="copilot-form">
+                <input type="text" id="copilot-input" placeholder="Ask about features, plans, etc." autocomplete="off">
+                <button type="submit" aria-label="Send message">
+                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <template id="copilot-thinking-template">
+        <div class="message ai thinking">
+            <div class="message-content">
+                <div class="dot-flashing"></div>
+            </div>
+        </div>
+    </template>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 FULXERPRO INVESTORS. All rights reserved.</p>
+      <div class="footer-right">
+        <div class="footer-links">
+          <a href="#">Disclosures</a>
+          <a href="#">Terms & Conditions</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Contact</a>
+        </div>
+        <div class="social-links">
+          <a href="#" aria-label="LinkedIn Profile">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+          </a>
+          <a href="#" aria-label="Twitter Profile">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

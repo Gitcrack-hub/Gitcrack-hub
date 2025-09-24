@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FULXERPRO INVESTORS | The Architecture of Modern Wealth</title>
+  
+  <link rel="stylesheet" href="index.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "marked": "https://esm.sh/marked@^15.0.8",
+        "@google/genai": "https://esm.sh/@google/genai@0.14.0"
+      }
+    }
+  </script>
+  <script type="module" src="index.tsx"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="logo">FULXERPRO</div>
+      <nav class="nav">
+        <a href="#" class="nav-link active" data-view="dashboard-view" id="nav-link-dashboard">Dashboard</a>
+        <a href="#" class="nav-link">Strategies</a>
+        <a href="#" class="nav-link">Research</a>
+        <a href="#" class="nav-link" data-view="ai-studio-view" id="nav-link-studio">AI Studio</a>
+        <a href="#" class="nav-link" data-view="guide-view">Platform Guide</a>
+        <a href="#" class="nav-link" data-view="admin-view" id="nav-link-admin">Admin</a>
+      </nav>
+      <button class="btn btn-secondary" id="cta-login-btn">Client Login</button>
+    </div>
+  </header>
+
+  <main>
+    <div id="dashboard-view" class="view-section">
+      <section class="hero">
+        <div class="container">
+          <h1>The Architecture of Modern Wealth.</h1>
+          <p>Harnessing institutional-grade intelligence and proprietary technology to build your enduring financial legacy.</p>
+          <button class="btn btn-primary btn-lg" id="cta-explore-btn">Explore Your Portfolio</button>
+        </div>
+      </section>
+
+      <section class="dashboard">
+        <div class="container">
+          <h2>Portfolio Intelligence Dashboard</h2>
+          <div class="dashboard-grid">
+            <div class="card-widget">
+              <h3>Portfolio Overview</h3>
+              <p class="metric-value">$12,458,721.55</p>
+              <p class="metric-change positive">+ $82,194.12 (+0.66%) Today</p>
+              <div class="chart-placeholder">
+                <svg width="100%" height="150" viewBox="0 0 400 150" preserveAspectRatio="none">
+                  <path d="M 0 120 C 40 100, 80 60, 120 80 S 200 130, 240 100 S 320 20, 360 50 S 400 80, 400 80" stroke="var(--primary-500)" fill="none" stroke-width="2"/>
+                </svg>
+              </div>
+            </div>
+            <div class="card-widget">
+              <h3>Asset Allocation</h3>
+               <div class="allocation-grid">
+                  <div class="allocation-item" style="--color: #007aff;"><span>US Equities</span><span>45%</span></div>
+                  <div class="allocation-item" style="--color: #34c759;"><span>Int'l Equities</span><span>20%</span></div>
+                  <div class="allocation-item" style="--color: #ff9500;"><span>Fixed Income</span><span>15%</span></div>
+                  <div class="allocation-item" style="--color: #ff3b30;"><span>Alternatives</span><span>10%</span></div>
+                  <div class="allocation-item" style="--color: #af52de;"><span>Private Equity</span><span>5%</span></div>
+                  <div class="allocation-item" style="--color: #5856d6;"><span>Cash</span><span>5%</span></div>
+              </div>
+            </div>
+            <div class="card-widget card-full-width" id="ai-insights-container">
+              <h3>AI-Powered Strategic Opportunities</h3>
+              <div id="ai-insights-content">
+                <!-- AI content will be injected here -->
+              </div>
+            </div>
+            <div class="card-widget card-full-width">
+              <h3>Our Investment Tiers</h3>
+              <div class="plans-grid">
+                <div class="plan-card">
+                  <h4>Apex Ascent</h4>
+                  <p class="plan-description">For the ambitious investor beginning their journey to significant wealth.</p>
+                  <ul class="plan-features">
+                    <li>Strategic Market Access</li>
+                    <li>AI-Curated Portfolio</li>
+                    <li>Core Growth Assets</li>
+                  </ul>
+                  <button class="btn btn-secondary">Select Plan</button>
+                </div>
+                <div class="plan-card featured">
+                  <h4>Nexus Growth</h4>
+                  <p class="plan-description">For the established investor seeking accelerated, diversified returns.</p>
+                  <ul class="plan-features">
+                    <li>Diversified Alpha Strategies</li>
+                    <li>Emerging Sector Exposure</li>
+                    <li>Priority Research Access</li>
+                  </ul>
+                  <button class="btn btn-primary">Select Plan</button>
+                </div>
+                <div class="plan-card">
+                  <h4>Celestial Mandate</h4>
+                  <p class="plan-description">For the visionary investor focused on building a generational legacy.</p>
+                  <ul class="plan-features">
+                    <li>Generational Wealth Architecture</li>
+                    <li>Exclusive Off-Market Deals</li>
+                    <li>Direct Co-Investment Rights</li>
+                  </ul>
+                  <button class="btn btn-secondary">Select Plan</button>
+                </div>
+              </div>
+            </div>
+            <div class="card-widget wallet-widget">
+                <h3>My Wallet</h3>
+                <div class="wallet-address-container">
+                    <span id="wallet-address">0x1A3b5C7d9E1f2G3H4i5j6K7L8m9N0o1P2q3R4s5T</span>
+                    <button id="copy-wallet-btn" class="btn btn-secondary" aria-label="Copy wallet address">Copy</button>
+                </div>
+                <div class="wallet-details">
+                    <div class="wallet-qr">
+                         <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=0x1A3b5C7d9E1f2G3H4i5j6K7L8m9N0o1P2q3R4s5T" alt="Wallet QR Code">
+                    </div>
+                    <div class="transaction-history">
+                        <h4>Transaction History</h4>
+                        <ul>
+                            <li><span class="positive">+0.5 ETH</span><small>2 hours ago</small></li>
+                            <li><span class="positive">+1.2 ETH</span><small>1 day ago</small></li>
+                            <li><span class="negative">-0.1 ETH</span><small>3 days ago</small></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card-widget">
+              <h3>Social Trading Insights</h3>
+              <div class="search-container">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                <input type="search" id="social-search-input" placeholder="Search traders...">
+              </div>
+              <ul class="trader-list">
+                <li data-trader-info='{"name": "Elena Rodriguez", "rank": "Top 1%", "ytd": "+24.5%", "trades": "BUY 150 NVDA, SELL 500 PFE, BUY 2000 PLTR"}'>
+                  <div class="trader-avatar"></div>
+                  <div class="trader-info">
+                    <span class="trader-name">Elena Rodriguez</span>
+                    <span class="trader-rank">Top 1% | +24.5% YTD</span>
+                  </div>
+                  <button class="follow-button">+</button>
+                </li>
+                <li data-trader-info='{"name": "Ben Carter", "rank": "Top 5%", "ytd": "+18.2%", "trades": "BUY 1000 MSFT, BUY 800 GOOG, SELL 200 TSLA"}'>
+                  <div class="trader-avatar"></div>
+                  <div class="trader-info">
+                    <span class="trader-name">Ben Carter</span>
+                    <span class="trader-rank">Top 5% | +18.2% YTD</span>
+                  </div>
+                  <button class="follow-button">+</button>
+                </li>
+                 <li data-trader-info='{"name": "Aisha Khan", "rank": "Rising Star", "ytd": "+31.0%", "trades": "BUY 5000 AMD, BUY 10000 INTC, SELL 3000 QCOM"}'>
+                  <div class="trader-avatar"></div>
+                  <div class="trader-info">
+                    <span class="trader-name">Aisha Khan</span>
+                    <span class="trader-rank">Rising Star | +31.0% YTD</span>
+                  </div>
+                  <button class="follow-button">+</button>
+                </li>
+              </ul>
+            </div>
+            <div class="card-widget">
+              <h3>Recent Activity</h3>
+              <ul class="activity-list">
+                <li><span>BUY</span><span>100 TSLA @ $182.50</span><span class="positive">-$18,250.00</span></li>
+                <li><span>DIVIDEND</span><span>MSFT</span><span class="positive">+$560.25</span></li>
+                <li><span>SELL</span><span>50 GOOG @ $178.10</span><span class="positive">+$8,905.00</span></li>
+                <li><span>DEPOSIT</span><span>Wire Transfer</span><span class="positive">+$50,000.00</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="awards-section">
+        <div class="container">
+          <h2>AI-Driven Excellence: Our Commitment to a Trusted & Reliable Platform</h2>
+          <p class="section-subtitle">Gaining client trust is what truly matters. Our platform’s architecture is consistently recognized for its innovation, security, and reliability by leading global authorities.</p>
+          <div class="awards-grid">
+            <div class="award-card">
+              <div class="award-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg>
+              </div>
+              <h4>The Turing Award for Financial AI Innovation</h4>
+              <p>Awarded for our proprietary AI's unparalleled predictive accuracy and its contribution to democratizing institutional-grade strategic insights.</p>
+            </div>
+            <div class="award-card">
+              <div class="award-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              </div>
+              <h4>Global WealthTech's 'Most Reliable Platform' Shield</h4>
+              <p>Recognized for five consecutive years for achieving 99.999% uptime and flawless execution of over 10 million secure transactions.</p>
+            </div>
+            <div class="award-card">
+              <div class="award-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 10.5c-2.2 2.2-2.2 5.8 0 8s5.8 2.2 8 0"/><path d="M19.5 13.5c2.2-2.2 2.2-5.8 0-8s-5.8-2.2-8 0"/><path d="M16 8l-8 8"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m6.3 6.3-.9-.9"/><path d="m18.6 18.6-.9-.9"/><path d="M22 12h-2"/><path d="M4 12H2"/><path d="m17.7 6.3.9-.9"/><path d="m5.4 18.6.9-.9"/></svg>
+              </div>
+              <h4>The Sentinel Prize for Secure Asset Management</h4>
+              <p>Awarded for our multi-layered, blockchain-verified security protocol that sets a new industry standard for protecting client assets against emerging threats.</p>
+            </div>
+            <div class="award-card">
+              <div class="award-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 16 4-4-4-4-4 4 4 4z"/><path d="M20 7.4V12c0 2.2-1.8 4-4 4H8c-2.2 0-4-1.8-4-4V7.4C4 6.1 5.1 5 6.4 5H12"/><path d="M12 16v4"/><path d="M17.6 5.4 12 10l-5.6-4.6"/><path d="m16 5 2 2-5 5-5-5 2-2"/></svg>
+              </div>
+              <h4>FULXERPRO AI Research Fellowship</h4>
+              <p>Partnering with leading academic institutions to pioneer the future of ethical, transparent, and explainable financial artificial intelligence.</p>
+            </div>
+          </div>
+        </div>
